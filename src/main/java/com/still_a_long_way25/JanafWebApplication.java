@@ -6,6 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class JanafWebApplication {
 
+	/**
+	 * エントリーポイント
+	 * @param args なし
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(JanafWebApplication.class, args);
 	}

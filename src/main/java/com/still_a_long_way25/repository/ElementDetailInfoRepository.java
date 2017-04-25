@@ -1,9 +1,7 @@
 package com.still_a_long_way25.repository;
 
+import com.still_a_long_way25.entity.ElementDetailInfoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.still_a_long_way25.entity.ElementDetailInfo;
-
-public interface ElementDetailInfoRepository extends JpaRepository<ElementDetailInfo, Long> {
-
+public interface ElementDetailInfoRepository extends JpaRepository<ElementDetailInfoEntity, Long> {
 }
