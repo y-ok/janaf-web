@@ -32,7 +32,6 @@ public class ElementManageInfoService {
     ElementThermoChemicalDataInfoRepository elementThermoChemicalDataInfoRepository;
 
     /**
-     *
      * @throws IOException
      */
     public void register() throws IOException {
@@ -46,7 +45,8 @@ public class ElementManageInfoService {
             for (ElementDetailInfoEntity elementDetailInfoEntity : elementDetailInfoEntityList) {
                 saveElementDetailInfoWithElementManageInfo(elementManageInfoEntity, elementDetailInfoEntity);
 
-                List<ElementThermoChemicalDataInfoEntity> elementThermoChemicalDataInfoEntityList = elementDetailInfoEntity.getElementThermoChemicalDataInfoEntityList();
+                List<ElementThermoChemicalDataInfoEntity> elementThermoChemicalDataInfoEntityList = elementDetailInfoEntity
+                        .getElementThermoChemicalDataInfoEntityList();
                 for (ElementThermoChemicalDataInfoEntity elementThermoChemicalDataInfoEntity : elementThermoChemicalDataInfoEntityList) {
                     saveElementThermoChemicalDataInfoWithElementDetailInfo(elementThermoChemicalDataInfoEntity, elementDetailInfoEntity);
                 }
@@ -55,7 +55,6 @@ public class ElementManageInfoService {
     }
 
     /**
-     *
      * @param elementManageInfoEntity
      * @param elementDetailInfoEntity
      */
@@ -68,7 +67,6 @@ public class ElementManageInfoService {
 
 
     /**
-     *
      * @param elementThermoChemicalDataInfoEntity
      * @param elementDetailInfoEntity
      */

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" name="y-ok"/>
+    <title>メニュー画面</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/webjars/datatables/css/jquery.dataTables.css}"/>
+    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/datatables/js/jquery.dataTables.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.spring-friendly.js}"></script>
+    <script type="text/javascript" th:src="@{/js/index.js}"></script>
+</head>
+<body>
+<div class="container">
+    <h1>登録元素一覧表</h1>
+    <table id="elements" class="table table-hover">
+        <thead class="thead-inverse">
+        <tr>
+            <th>ID</th>
+            <th>元素名称</th>
+            <th>詳細URL</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+</body>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">Copyright &copy; 2017 y-ok All Rights Reserved.</p>
+    </div>
+</footer>
+</html>

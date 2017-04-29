@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 
@@ -19,8 +20,17 @@ public class ElementManageInfoController {
     ElementManageInfoService elementManageInfoService;
 
     /**
+     *
+     * @return
+     */
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index() {
+        return "index";
+    }
+
+    /**
      * 登録処理を実施します
-     * 
+     *
      * @return regist
      * @throws IOException
      */

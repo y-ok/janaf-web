@@ -9,12 +9,20 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Jsonパーサーユーティルクラス
- *
+ * Jsonパーサーユーティリティクラス
+ * <p>
  * Created by y-ok on 2017/04/23.
  */
 public class JsonParserUtil {
 
+    /**
+     *
+     * Jsonファイルをパースします
+     *
+     * @param path
+     * @return
+     * @throws IOException
+     */
     public List<ElementManageInfoEntity> parser(String path) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
 
