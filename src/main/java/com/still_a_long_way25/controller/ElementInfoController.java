@@ -3,29 +3,51 @@ package com.still_a_long_way25.controller;
 import com.still_a_long_way25.service.ElementManageInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;
 
 /**
- * 元素管理情報コントローラ
+ * 元素情報コントローラクラス
  * Created by y-ok on 2017/04/23.
  */
 @Controller
-public class ElementManageInfoController {
+public class ElementInfoController {
 
     @Autowired
     ElementManageInfoService elementManageInfoService;
 
     /**
-     *
      * @return
      */
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index() {
         return "index";
+    }
+
+    /**
+     * @param id
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/element", method = RequestMethod.GET)
+    public String element(@RequestParam(value = "id") String id, Model model) {
+        model.addAttribute("id", id);
+        return "element";
+    }
+
+    /**
+     * @param id
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/thermochemical-data", method = RequestMethod.GET)
+    public String thermochemicalData(@RequestParam(value = "id") String id, Model model) {
+        model.addAttribute("id", id);
+        return "thermochemical-data";
     }
 
     /**

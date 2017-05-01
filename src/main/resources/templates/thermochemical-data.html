@@ -2,7 +2,7 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>メニュー画面</title>
+    <title>登録元素熱化学詳細画面</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/webjars/datatables/css/jquery.dataTables.css}"/>
     <link rel="stylesheet" th:href="@{/css/index.css}"/>
@@ -11,26 +11,34 @@
     <script type="text/javascript" th:src="@{/webjars/datatables/js/jquery.dataTables.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/momentjs/moment.js}"></script>
     <script type="text/javascript" th:src="@{/js/jquery.spring-friendly.js}"></script>
-    <script type="text/javascript" th:src="@{/js/index.js}"></script>
+    <script type="text/javascript" th:src="@{/js/thermochemical-data.js}"></script>
 </head>
 <body>
-<div class="container">
-    <h1>登録元素一覧表</h1>
-    <table id="elements" class="table table-hover" cellspacing="0" width="100%">
+
+<!--/*@thymesVar id="id" type=""*/-->
+<div class="container" th:id="${id}">
+    <h1>登録元素熱化学詳細一覧表</h1>
+    <table id="thermochemical-data" class="table table-hover" cellspacing="0" width="100%">
         <thead class="thead-inverse">
         <tr>
             <th>ID</th>
-            <th>元素名称</th>
-            <th>詳細URL</th>
-            <th>更新時刻</th>
+            <th>温度</th>
+            <th>比熱</th>
+            <th>エントロピー</th>
+            <th>ギブス</th>
+            <th>エンタルピー</th>
+            <th>更新時間</th>
         </tr>
         </thead>
         <tfoot>
         <tr>
             <th>ID</th>
-            <th id="search">元素名称</th>
-            <th>詳細URL</th>
-            <th>更新時刻</th>
+            <th id="search">温度</th>
+            <th>比熱</th>
+            <th>エントロピー</th>
+            <th>ギブス</th>
+            <th>エンタルピー</th>
+            <th>更新時間</th>
         </tr>
         </tfoot>
     </table>

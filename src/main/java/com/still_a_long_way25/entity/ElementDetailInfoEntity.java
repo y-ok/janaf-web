@@ -1,7 +1,7 @@
 package com.still_a_long_way25.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonView;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -21,32 +21,37 @@ public class ElementDetailInfoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "element_detail_info_id")
-    //@JsonIgnore
+    @JsonProperty("elementDetailInfoId")
+    @JsonView(ElementView.class)
     public Long elementDetailInfoId;
 
     @Column(name = "casNumber", length = 50, nullable = false)
     @JsonProperty("casNumber")
+    @JsonView(ElementView.class)
     public String casNumber;
 
     @Column(name = "formula", length = 10, nullable = false)
     @JsonProperty("formula")
+    @JsonView(ElementView.class)
     public String formula;
 
     @Column(name = "name", length = 30, nullable = false)
     @JsonProperty("name")
+    @JsonView(ElementView.class)
     public String name;
 
     @Column(name = "state", length = 30, nullable = false)
     @JsonProperty("state")
+    @JsonView(ElementView.class)
     public String state;
 
     @Column(name = "JANAFTableUrl", length = 300, nullable = false)
     @JsonProperty("JANAFTableUrl")
+    @JsonView(ElementView.class)
     public String JANAFTableUrl;
 
     @ManyToOne
     @JoinColumn(name = "id")
-    //@JsonIgnore
     public ElementManageInfoEntity elementManageInfoEntity;
 
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "elementDetailInfoEntity")
@@ -55,6 +60,7 @@ public class ElementDetailInfoEntity {
 
     @Column(name = "update_time", updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
-    @JsonIgnore
+    @JsonProperty("updateTime")
+    @JsonView(ElementView.class)
     public Date updateTime;
 }

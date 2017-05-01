@@ -2,25 +2,29 @@
  * Created by y-ok on 2017/04/30.
  */
 $(document).ready(function () {
-    var table = $('table#elements').DataTable({
-        "sAjaxSource": '/data/elements',
+    var id = $('div.container').attr('id');
+    var table = $('table#thermochemical-data').DataTable({
+        "sAjaxSource": '/data/thermochemical-data/' + id,
         "sAjaxDataProp": "",
         "order": [[0, "asc"]],
         "aoColumns": [
             {
-                "mData": "id",
-                "render": function(data) {
-                    return '<a href="/element?id='+ data + '">' + data + '</a>';
-                }
+                "mData": "elementThermoChemicalDataInfoId"
             },
             {
-                "mData": "elementName"
+                "mData": "temperature"
             },
             {
-                "mData": "elementUrl",
-                "render": function (data) {
-                    return '<a href="' + data + '">' + data + '</a>';
-                }
+                "mData": "specificHeat"
+            },
+            {
+                "mData": "entropy"
+            },
+            {
+                "mData": "gibbs"
+            },
+            {
+                "mData": "enthalpy"
             },
             {
                 "mData": 'updateTime',
@@ -30,13 +34,13 @@ $(document).ready(function () {
             }]
     });
 
-    $('#elements tfoot th#search').each(function () {
+    $('#thermochemical-data tfoot th#search').each(function () {
         var title = $(this).text();
         $(this).html('<input type="text" placeholder="Search ' + title + '" />');
     });
 
     // DataTable
-    var table = $('#elements').DataTable();
+    var table = $('#thermochemical-data').DataTable();
 
     // Apply the search
     table.columns().every(function () {
