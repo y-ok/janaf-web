@@ -2,32 +2,22 @@
  * Created by y-ok on 2017/04/30.
  */
 $(document).ready(function () {
-    var id = $('div.container').attr('id');
-    var table = $('table#element').DataTable({
-        "sAjaxSource": '/data/elements/' + id,
+    var table = $('table#elements').DataTable({
+        "sAjaxSource": '/data/elements',
         "sAjaxDataProp": "",
         "order": [[0, "asc"]],
         "aoColumns": [
             {
-                "mData": "elementDetailInfoId",
+                "mData": "id",
                 "render": function(data) {
-                    return '<a href="/thermochemical-data?id='+ data + '" data-toggle="tooltip" title="登録元素熱化学詳細画面へ">' + data + '</a>';
+                    return '<a href="/element?id='+ data + '" data-toggle="tooltip" title="登録元素詳細画面へ">' + data + '</a>';
                 }
             },
             {
-                "mData": "casNumber"
+                "mData": "elementName"
             },
             {
-                "mData": "formula"
-            },
-            {
-                "mData": "name"
-            },
-            {
-                "mData": "state"
-            },
-            {
-                "mData": "JANAFTableUrl",
+                "mData": "elementUrl",
                 "render": function (data) {
                     return '<a href="' + data + '">' + data + '</a>';
                 }
