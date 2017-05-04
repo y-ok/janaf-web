@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by y-ok on 2017/04/23.
  */
-@Service("elementManageInfoService")
+@Service
 public class ElementManageInfoServiceImpl implements ElementManageInfoService {
 
     private static String PATH = "/Users/okawauchi/Documents/workspace/janaf-chemicaldata-crawler/output/json/chemical_element_info.json";

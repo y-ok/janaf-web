@@ -23,9 +23,9 @@ public class ElementInfoController {
     /**
      * @return
      */
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    @RequestMapping(value = "/elements", method = RequestMethod.GET)
     public String index() {
-        return "index";
+        return "elements";
     }
 
     /**

@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by y-ok on 2017/05/01.
  */
-@Service("elementDetailInfoService")
+@Service
 public class ElementDetailInfoServiceImpl implements ElementDetailInfoService {
 
     @Autowired
