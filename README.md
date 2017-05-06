@@ -9,7 +9,6 @@ $ docker-machine create --driver virtualbox development
 $ docker-machine regenerate-certs development
 $ eval "$(docker-machine env development)"
 $ docker-machine start development
-
 ```
 
 - step1
@@ -32,11 +31,11 @@ $ docker build -t y-ok/janaf-web .
 $ docker-compose up product
 ```
 
-- step4
+- step4  
+  http://192.168.99.100:8080/elements  
 
-http://localhost:8080/elements
 
-- Stopping janaf-web
+## Stopping janaf-web
 
 ```cmd
 $ docker-compose down
