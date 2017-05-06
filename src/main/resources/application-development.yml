@@ -1,5 +1,5 @@
 spring:
-  profiles: dev
+  profiles: development
   datasource:
     url: jdbc:mysql://localhost:3306/janaf
     username: janaf

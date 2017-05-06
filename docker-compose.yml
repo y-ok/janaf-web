@@ -1,10 +1,9 @@
 version: '2'
+
 services:
   mysql:
-    image: mysql
+    image: mysql:latest
     container_name: mysql
-    ports:
-      - 3306:3306
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
@@ -18,12 +17,12 @@ services:
     build: .
   development:
     image: y-ok/janaf-web
-    container_name: janaf-web
+    container_name: janaf-web-development
     ports:
       - 8080:8080
     environment:
-      SPRING_PROFILES_ACTIVE: dev
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql/janaf
+      SPRING_PROFILES_ACTIVE: development
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/janaf
       SPRING_DATASOURCE_USERNAME: janaf
       SPRING_DATASOURCE_PASSWORD: password
       SPRING_DATASOURCE_DRIVERCLASSNAME: com.mysql.jdbc.Driver
@@ -32,12 +31,12 @@ services:
 
   product:
     image: y-ok/janaf-web
-    container_name: janaf-web
+    container_name: janaf-web-product
     ports:
       - 8080:8080
     environment:
-      SPRING_PROFILES_ACTIVE: product
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql/janaf
+      SPRING_PROFILES_ACTIVE: production
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/janaf
       SPRING_DATASOURCE_USERNAME: janaf
       SPRING_DATASOURCE_PASSWORD: password
       SPRING_DATASOURCE_DRIVERCLASSNAME: com.mysql.jdbc.Driver
