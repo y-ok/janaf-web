@@ -23,13 +23,13 @@ $ mvn clean package -Dmaven.test.skip=true
 - step2
 
 ```cmd
-$docker build -t y-ok/janaf-web .
+$ docker build -t y-ok/janaf-web .
 ```
 
 - step3
 
 ```cmd
-$docker-compose up product
+$ docker-compose up product
 ```
 
 - step4
