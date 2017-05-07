@@ -1,0 +1,43 @@
+@startuml
+namespace janaf_web {
+    class JanafWebApplication
+
+    namespace domain {
+        namespace controller {
+            class ElementInfoController
+            class ElementManageInfoRestController
+            class ElementDetailInfoRestController
+            class ElementThermoChemicalInfoRestController
+        }
+        namespace entity {
+            class ElementManageInfoEntity
+            class ElementDetailInfoEntity
+            class ElementThermoChemicalDataInfoEntity
+            class ElementView
+        }
+        namespace form {
+            class ElementForm
+        }
+        namespace repository {
+            class ElementManageInfoRepository
+            class ElementDetailInfoRepository
+            class ElementThermoChemicalDataInfoRepository
+            janaf_web.domain.repository.ElementManageInfoRepository -> janaf_web.domain.entity.ElementManageInfoEntity
+            janaf_web.domain.repository.ElementDetailInfoRepository -> janaf_web.domain.entity.ElementDetailInfoEntity
+            janaf_web.domain.repository.ElementThermoChemicalDataInfoRepository -> janaf_web.domain.entity.ElementThermoChemicalDataInfoEntity
+        }
+        namespace service {
+            interface ElementManageInfoService
+            interface ElementDetailInfoService
+            interface ElementThermoChemicalInfoService
+            class ElementManageInfoServiceImpl implements ElementManageInfoService
+            class ElementDetailInfoServiceImpl implements ElementDetailInfoService
+            class ElementThermoChemicalDataInfoServiceImpl implements ElementThermoChemicalInfoService
+        }
+        namespace util {
+            class JsonParserUtil
+            janaf_web.domain.util.JsonParserUtil -> janaf_web.domain.entity.ElementManageInfoEntity
+        }
+    }
+}
+@enduml
