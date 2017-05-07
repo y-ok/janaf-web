@@ -22,3 +22,7 @@ $ sh docker-stop.sh
 ```cmd
 $ sh docker-remove-all.sh
 ```
+
+## Janaf-web UML class diagram
+
+![](doc/janaf-web.png)
