@@ -1,42 +1,24 @@
 # Janaf-web
 
-## How to use
-
-- step0
-
-```
-$ docker-machine create --driver virtualbox development
-$ docker-machine regenerate-certs development
-$ eval "$(docker-machine env development)"
-$ docker-machine start development
-```
-
-- step1
+## Start janaf-web
 
 ```cmd
 $ git clone https://github.com/y-ok/janaf-web.git
 $ cd janaf-web
-$ mvn clean package -Dmaven.test.skip=true
+$ sh docker-start.sh product
 ```
 
-- step2
-
-```cmd
-$ docker build -t y-ok/janaf-web .
-```
-
-- step3
-
-```cmd
-$ docker-compose up product
-```
-
-- step4  
+## Access janaf-web
   http://192.168.99.100:8080/elements  
-
 
 ## Stopping janaf-web
 
 ```cmd
-$ docker-compose down
+$ sh docker-stop.sh
+```
+
+## Remove docker-image, docker-process
+
+```cmd
+$ sh docker-remove-all.sh
 ```
