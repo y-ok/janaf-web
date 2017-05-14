@@ -9,14 +9,13 @@
     <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/datatables/js/jquery.dataTables.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/momentjs/moment.js}"></script>
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+    <!--?<script type="text/x-mathjax-config">-->
+    <!--?MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });-->
 
-
-    </script>
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML">
-    </script>
+    <!--?</script>-->
+    <!--?<script type="text/javascript"-->
+            <!--?src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML">-->
+    <!--?</script>-->
     <script type="text/javascript" th:src="@{/js/thermochemical-data.js}"></script>
 </head>
 <body>
@@ -28,11 +27,11 @@
         <thead class="thead-inverse">
         <tr>
             <th>ID</th>
-            <th>温度 $[T/K]$</th>
-            <th>比熱 $[C_p]$</th>
-            <th>エントロピー $[S]$</th>
-            <th>ギブス $[-[G-H(T_r)]/T]$</th>
-            <th>エンタルピー $[H-H(T_r)]$</th>
+            <th>温度</th>
+            <th>比熱</th>
+            <th>エントロピー</th>
+            <th>ギブス</th>
+            <th>エンタルピー</th>
             <th>更新時間</th>
         </tr>
         </thead>
@@ -56,7 +55,6 @@
 
 <footer class="footer">
     <div class="container">
-        <p>$T_r$ : Enthalpy Reference Temperature = 298.15 $K$</p>
         <p class="text-muted">Copyright &copy; 2017 y-ok All Rights Reserved.</p>
     </div>
 </footer>

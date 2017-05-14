@@ -1,4 +1,5 @@
 /**
+ *
  * Created by y-ok on 2017/04/30.
  */
 $(document).ready(function () {

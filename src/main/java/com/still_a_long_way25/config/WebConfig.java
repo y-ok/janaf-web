@@ -6,6 +6,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.resource.GzipResourceResolver;
 
 /**
+ * WebConfigクラス
  * Created by y-ok on 2017/04/26.
  */
 @Configuration
