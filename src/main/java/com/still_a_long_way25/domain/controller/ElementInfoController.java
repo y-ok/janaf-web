@@ -61,4 +61,14 @@ public class ElementInfoController {
         elementManageInfoService.register();
         return "regist";
     }
+
+    /**
+     * フォーム画面を表示します
+     *
+     * @return
+     */
+    @RequestMapping(value = "/form", method = RequestMethod.GET)
+    public String form() {
+        return "form";
+    }
 }

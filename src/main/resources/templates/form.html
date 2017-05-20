@@ -2,26 +2,80 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>メニュー画面</title>
-    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <title>元素データ入力画面</title>
+    <script type="text/javascript" th:src="@{/webjars/tether/js/tether.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-    <script type="text/javascript" th:src="@{/webjars/momentjs/moment.js}"></script>
-</head>
-<body>
-<div class="container">
-    <h1>元素データ入力画面</h1>
+    <script type="text/javascript" th:src="@{/js/elements_for_form.js}"></script>
+    <!-- amchart -->
+    <script type="text/javascript" th:src="@{/webjars/amcharts/amcharts.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/amcharts/serial.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/amcharts/plugins/export/export.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/amcharts/themes/light.js}"></script>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/webjars/amcharts/plugins/export/export.css}"/>
+    <script type="text/javascript" th:src="@{/js/specificHeatChart.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/specificHeat.css}"/>
 
-    <div class="form-group">
-        <label class="control-label" for="exampleSelect">Select</label>
-        <select class="form-control" id="exampleSelect" name="fselect">
-            <option value="">---</option>
-        </select>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+
+</head>
+<!-- ナビゲーションバー -->
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-for-form"
+            aria-controls="navbar-for-form" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-for-form">
+        <a class="navbar-brand" href="/elements">Janaf</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="/elements">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/form">Form</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://kinetics.nist.gov/janaf/" target="_blank">NIST JANAF Link</a>
+            </li>
+        </ul>
     </div>
+</nav>
+<body>
+
+<div class="container" style="margin-top:20px;padding-bottom:0px;">
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <span>登録元素</span>
+            <select class="form-control" id="element_name"/>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <span>化学式</span>
+            <select class="form-control" id="formula"/>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <span>温度</span>
+            <select class="form-control" id="temperature"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <span>比熱</span>
+            <div class="form-control" id="specificHeat"/>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <span>エントロピー</span>
+            <div class="form-control" id="entropy"/>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <span>ギブス</span>
+            <div class="form-control" id="gibbs"/>
+        </div>
+    </div>
+    <div id="chartdiv"></div>
 
 </div>
 </body>
-
 <footer class="footer">
     <div class="container">
         <p class="text-muted">Copyright &copy; 2017 y-ok All Rights Reserved.</p>

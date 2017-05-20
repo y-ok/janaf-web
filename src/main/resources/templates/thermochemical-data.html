@@ -5,6 +5,7 @@
     <title>登録元素熱化学詳細画面</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/webjars/datatables/css/jquery.dataTables.css}"/>
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
     <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/datatables/js/jquery.dataTables.min.js}"></script>
@@ -18,10 +19,29 @@
     <!--?</script>-->
     <script type="text/javascript" th:src="@{/js/thermochemical-data.js}"></script>
 </head>
+<!-- ナビゲーションバー -->
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-for-thermochemical-data" aria-controls="navbar-for-thermochemical-data" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-for-thermochemical-data">
+        <a class="navbar-brand" href="/elements">Janaf</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="/elements">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/form">Form</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://kinetics.nist.gov/janaf/" target="_blank">NIST JANAF Link</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 <body>
-
 <!--/*@thymesVar id="id" type=""*/-->
-<div class="container" th:id="${id}">
+<div class="container" th:id="${id}" style="margin-top:20px;padding-bottom:0px;">
     <h1>登録元素熱化学詳細一覧表</h1>
     <table id="thermochemical-data" class="table table-hover" cellspacing="0" width="100%">
         <thead class="thead-inverse">
