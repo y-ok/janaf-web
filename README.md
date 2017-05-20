@@ -33,13 +33,13 @@ $ sh docker-remove-all.sh
 
  |No.| 計画内容 |見積期間 | 実績期間 |
  | --- | ------------------------------------------------------------------------- | ---------------------- | ------ |
- |1. | 元素を選択し、各温度における物理量を選択できるようにするフォーム画面を作成する。 | 2017.5M |
- |2. | 1.のフォーム画面から作成した情報をExcel、pdfで出力する機能を具備する。| 2017.5M 〜 2017.6B |
- |3. | 2.で作成したExcel、pdfの情報をjson形式で作成日毎にデータベースに保持する。| 2017.6B 〜 2017.6M |
- |4. | 温度の補完をし、補完した温度に従った物理量を推定し、データベースに保持する。もちろん、推定した物理量は1で選択できること。| 2017.6M 〜 2017.7B |
- |5. | ログイン機能を具備する。 | 2017.7B 〜 2017.7E |
- |6. | [janaf-chemicaldata-crawler](https://github.com/y-ok/janaf-chemicaldata-crawler)のスクレイピング機能を具備し、最新のデータを取り込めるようにする。| 2017.7E 〜 2017.8B |
- |7. | 当該webサービスはIPアドレスではなくホスト名で指定できるようにする。| 2017.8B 〜 2017.8M |
+ |1. | 元素を選択し、各温度における物理量を選択できるようにするフォーム画面を作成する。 [develop_No.1](https://github.com/y-ok/janaf-web/tree/develop_No.1)| 2017.5M |
+ |2. | 1.のフォーム画面から作成した情報をExcel、pdfで出力する機能を具備する。[develop_No.2](https://github.com/y-ok/janaf-web/tree/develop_No.2)| 2017.5M 〜 2017.6B |
+ |3. | 2.で作成したExcel、pdfの情報をjson形式で作成日毎にデータベースに保持する。[develop_No.3](https://github.com/y-ok/janaf-web/tree/develop_No.3)| 2017.6B 〜 2017.6M |
+ |4. | 温度の補完をし、補完した温度に従った物理量を推定し、データベースに保持する。もちろん、推定した物理量は1で選択できること。[develop_No.4](https://github.com/y-ok/janaf-web/tree/develop_No.4)| 2017.6M 〜 2017.7B |
+ |5. | ログイン機能を具備する。 [develop_No.5](https://github.com/y-ok/janaf-web/tree/develop_No.5)| 2017.7B 〜 2017.7E |
+ |6. | [janaf-chemicaldata-crawler](https://github.com/y-ok/janaf-chemicaldata-crawler)のスクレイピング機能を具備し、最新のデータを取り込めるようにする。[develop_No.6](https://github.com/y-ok/janaf-web/tree/develop_No.6)| 2017.7E 〜 2017.8B |
+ |7. | 当該webサービスはIPアドレスではなくホスト名で指定できるようにする。[develop_No.7](https://github.com/y-ok/janaf-web/tree/develop_No.7)| 2017.8B 〜 2017.8M |
  |8. | ソフトウェアデザインパターンの観点で当該ソフトウェアの構造を見直す。| 2017.8M 〜 2017.9B |
  |9. | リファクタリングを実施する。| 2017.9B 〜 2017.9E |
  |10.| クラス図、コンポーネント図、シーケンス図を作成する。| 2017.10B 〜 2017.10M |
