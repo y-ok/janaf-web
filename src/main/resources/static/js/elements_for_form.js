@@ -49,10 +49,62 @@ $.ajax({
                     cache: false
                 }).done(function (data) {
                     console.log(JSON.stringify(data, undefined, 4));
+
+                    var chart = AmCharts.makeChart("chartdiv", {
+                        "type": "serial",
+                        "legend": {
+                            "equalWidths": false,
+                            "useGraphSettings": true,
+                            "valueAlign": "left",
+                            "valueWidth": 120
+                        },
+                        "categoryField": "temperature",
+                        "valueAxes": [
+                            {
+                                "id": "specificHeatAxis",
+                                "position": "left",
+                                "title": "specificHeat"
+                            },
+                            {
+                                "id": "entropyAxis",
+                                "position": "right",
+                                "title": "entropy"
+                            }
+                        ],
+                        "graphs": [
+                            {
+                                "balloonText": "specificHeat:[[value]]",
+                                "bullet": "square",
+                                "bulletBorderAlpha": 1,
+                                "useLineColorForBulletBorder": true,
+                                "bulletColor": "#FFFFFF",
+                                "valueField": "specificHeat",
+                                "title": "比熱",
+                                "valueAxis": "specificHeatAxis"
+                            },
+                            {
+                                "balloonText": "entropy:[[value]]",
+                                "bullet": "round",
+                                "bulletBorderAlpha": 1,
+                                "useLineColorForBulletBorder": true,
+                                "bulletColor": "#FFFFFF",
+                                "valueField": "entropy",
+                                "title": "エントロピー",
+                                "valueAxis": "entropyAxis"
+                            }
+                        ],
+                        "export": {
+                            "enabled": true
+                        }
+                    });
+
+                    chart.dataProvider = data;
+                    chart.validateNow();
+                    chart.validateData();
+
                     $('#temperature option').remove();
                     $.each(data, function (i, value) {
                         $('#temperature').append($('<option>').text(value.temperature).attr('value', i));
-
                     });
 
                     $('#temperature').change(function () {
@@ -73,6 +125,6 @@ $.ajax({
         });
     });
 
-}).fail(function (data) {
+}).fail(function () {
     alert('Error!!');
 });
