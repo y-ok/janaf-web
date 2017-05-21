@@ -71,4 +71,14 @@ public class ElementInfoController {
     public String form() {
         return "form";
     }
+
+    /**
+     * プロット画面を表示します
+     *
+     * @return
+     */
+    @RequestMapping(value = "/plot", method = RequestMethod.GET)
+    public String plot() {
+        return "plot";
+    }
 }

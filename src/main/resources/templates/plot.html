@@ -6,7 +6,15 @@
     <script type="text/javascript" th:src="@{/webjars/tether/js/tether.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-    <script type="text/javascript" th:src="@{/js/elements_for_form.js}"></script>
+    <script type="text/javascript" th:src="@{/js/plot.js}"></script>
+    <!-- amchart -->
+    <script type="text/javascript" th:src="@{/webjars/amcharts/amcharts.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/amcharts/serial.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/amcharts/plugins/export/export.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/amcharts/themes/light.js}"></script>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/webjars/amcharts/plugins/export/export.css}"/>
+    <link rel="stylesheet" th:href="@{/css/plot.css}"/>
+
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/common.css}"/>
 
@@ -47,25 +55,8 @@
             <span>化学式</span>
             <select class="form-control" id="formula"/>
         </div>
-        <div class="col-xs-6 col-md-3">
-            <span>温度</span>
-            <select class="form-control" id="temperature"/>
-        </div>
     </div>
-    <div class="row">
-        <div class="col-xs-6 col-md-3">
-            <span>比熱</span>
-            <div class="form-control" id="specificHeat"/>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <span>エントロピー</span>
-            <div class="form-control" id="entropy"/>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <span>ギブス</span>
-            <div class="form-control" id="gibbs"/>
-        </div>
-    </div>
+    <div id="chartdiv"></div>
 
 </div>
 </body>
