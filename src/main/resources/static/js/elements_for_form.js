@@ -1,4 +1,4 @@
-/**
+    /**
  * elements_for_form.js
  * Created by y-ok on 2017/05/15.
  */
@@ -58,17 +58,44 @@ $.ajax({
                             "valueAlign": "left",
                             "valueWidth": 120
                         },
+                        "synchronizeGrid":true,
                         "categoryField": "temperature",
                         "valueAxes": [
                             {
                                 "id": "specificHeatAxis",
                                 "position": "left",
-                                "title": "specificHeat"
+                                "title": "specificHeat",
+                                "axisColor": "#FF6600",
+                                "axisThickness": 2,
+                                "axisAlpha": 1
                             },
                             {
                                 "id": "entropyAxis",
                                 "position": "right",
-                                "title": "entropy"
+                                "title": "entropy",
+                                "axisColor": "#FCD202",
+                                "axisThickness": 2,
+                                "axisAlpha": 1
+                            },
+                            {
+                                "id": "gibbsAxis",
+                                "position": "left",
+                                "title": "gibbs",
+                                "axisColor": "#B0DE09",
+                                "axisThickness": 2,
+                                "gridAlpha": 0,
+                                "offset": 60,
+                                "axisAlpha": 1
+                            },
+                            {
+                                "id": "enthalpyAxis",
+                                "position": "right",
+                                "title": "enthalpy",
+                                "axisColor": "#0D8ECF",
+                                "axisThickness": 2,
+                                "gridAlpha": 0,
+                                "offset": 60,
+                                "axisAlpha": 1
                             }
                         ],
                         "graphs": [
@@ -80,7 +107,8 @@ $.ajax({
                                 "bulletColor": "#FFFFFF",
                                 "valueField": "specificHeat",
                                 "title": "比熱",
-                                "valueAxis": "specificHeatAxis"
+                                "valueAxis": "specificHeatAxis",
+                                "fillAlphas": 0
                             },
                             {
                                 "balloonText": "entropy:[[value]]",
@@ -90,11 +118,40 @@ $.ajax({
                                 "bulletColor": "#FFFFFF",
                                 "valueField": "entropy",
                                 "title": "エントロピー",
-                                "valueAxis": "entropyAxis"
+                                "valueAxis": "entropyAxis",
+                                "fillAlphas": 0
+                            },
+                            {
+                                "balloonText": "gibbs:[[value]]",
+                                "bullet": "triangleUp",
+                                "bulletBorderAlpha": 1,
+                                "useLineColorForBulletBorder": true,
+                                "bulletColor": "#FFFFFF",
+                                "valueField": "gibbs",
+                                "title": "ギブス",
+                                "valueAxis": "gibbsAxis",
+                                "fillAlphas": 0
+                            },
+                            {
+                                "balloonText": "enthalpy:[[value]]",
+                                "bullet": "triangleDown",
+                                "bulletBorderAlpha": 1,
+                                "useLineColorForBulletBorder": true,
+                                "bulletColor": "#FFFFFF",
+                                "valueField": "enthalpy",
+                                "title": "エンタルピー",
+                                "valueAxis": "enthalpyAxis",
+                                "fillAlphas": 0
                             }
+
                         ],
+                        "chartScrollbar": {},
+                        "chartCursor": {
+                            "cursorPosition": "mouse"
+                        },
                         "export": {
-                            "enabled": true
+                            "enabled": true,
+                            "position": "bottom-right"
                         }
                     });
 
